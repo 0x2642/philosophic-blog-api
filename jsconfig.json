@@ -1,0 +1,14 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=759670
+  // for the documentation about the jsconfig.json format
+  "compilerOptions": {
+    "target": "ES5"
+  },
+  "exclude": [
+    "app",
+    "node_modules",
+    "jspm_packages",
+    "tmp",
+    "temp"
+  ]
+}
