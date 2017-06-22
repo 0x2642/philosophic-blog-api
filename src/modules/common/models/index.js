@@ -53,3 +53,4 @@ sequelize.authenticate().catch(function(errors) {
 
 // Export 
 export let Article = sequelize.import(join(__dirname, './article'));
+export let Admin = sequelize.import(join(__dirname, './admin'));
