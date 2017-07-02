@@ -27,4 +27,6 @@ if (env !== "development") {
 }
 
 
-export log
+export {
+	log
+}

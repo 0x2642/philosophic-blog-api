@@ -7,7 +7,7 @@
     "build": "export BABEL_ENV=production && gulp clean && babel src --ignore src/localtest -d build/src && gulp && export BABEL_ENV=development",
     "start": "nodemon src/app.js",
     "babel-node": "babel-node -- src/app.js",
-    "debug": "nodemon --debug --exec  babel-node -- src/app.js",
+    "debug": "nodemon --debug --exec  babel-node -- src/app.js"
   },
   "author": "lsy",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "chai": "^3.5.0",
     "chance": "^1.0.3",
     "co": "^4.6.0",
+    "faker": "^4.1.0",
     "gulp": "^3.9.1",
     "rimraf": "^2.5.2",
     "should": "^8.3.1"

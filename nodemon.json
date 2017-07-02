@@ -1,0 +1,9 @@
+{
+	"ignore": [
+		"logs",
+		"node_modules"
+	],
+	"execMap": {
+		"js": "./node_modules/.bin/babel-node"
+	}
+}

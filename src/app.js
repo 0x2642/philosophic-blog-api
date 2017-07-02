@@ -7,18 +7,18 @@ import config from './config/config';
 import router from './router';
 import koaBody from 'koa-body';
 import serve from 'koa-static';
-import session from './modules/middleware/session';
-import SessionStore from './modules/middleware/session.store';
+// import session from './modules/middleware/session';
+// import SessionStore from './modules/middleware/session.store';
 
 
 const app = new Koa();
 
 //session
-app.use(session({
-	key: config.sessionKey,
-	store: new SessionStore(),
-	overwrite: true
-}));
+// app.use(session({
+// 	key: config.sessionKey,
+// 	store: new SessionStore(),
+// 	overwrite: true
+// }));
 
 app.use(serve(config.fileDir));
 
@@ -28,22 +28,6 @@ app.use(convert(koaBody({
 		uploadDir: config.uploadDir
 	},
 	multipart: true
-})));
-
-/*
-跨域支持
-todo 白名单
-*/
-app.use(convert(cors({
-	origin: function(req) {
-		let origin = req.header.origin;
-		if (origin && config.allowOrigins.indexOf(origin) != -1) {
-			return origin;
-		}
-		return config.allowOrigins[0];
-	},
-	credentials: true,
-	headers: ["X-Token", "Content-Type"]
 })));
 
 //禁止缓存
