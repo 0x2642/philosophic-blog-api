@@ -10,7 +10,7 @@ import {
 
 let dbConfig = config.mysql;
 
-export sequelize = new Sequelize(dbConfig.database, dbConfig.user, dbConfig.password, {
+export let sequelize = new Sequelize(dbConfig.database, dbConfig.user, dbConfig.password, {
 	host: dbConfig.host,
 	dialect: "mysql",
 	pool: {
@@ -53,3 +53,4 @@ sequelize.authenticate().catch(function(errors) {
 
 // Export 
 export let Article = sequelize.import(join(__dirname, './article'));
+//export let Admin = sequelize.import(join(__dirname, './admin'));
